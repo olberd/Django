@@ -5,12 +5,17 @@ from django.http import HttpRequest
 # Create your views here.
 
 def main(request):
+    content = {
+        'title': 'магазин'
+    }
+    return render(request, 'mainapp/index.html', content)
 
-    return render(request, 'mainapp/index.html')
 
+def products(request: HttpRequest, id=0):
 
-def products(request):
-    return render(request, 'mainapp/products.html')
+    return render(request, 'mainapp/products.html', {
+                      'product_id': id
+                  })
 
 
 def contact(request):

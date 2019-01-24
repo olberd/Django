@@ -10,14 +10,16 @@
         {% endblock %}
     </title>
 </head>
+
 <body>
 
 	<div class="container">
+
      {% block content %}
+ {{ product_id }}
 		<div class="hero-white">
 			 {% include 'mainapp/includes/inc_menu.html' %}
 		</div>
-
 		<div class="details">
 			<div class="links clearfix">
 				<ul class="links-menu">
