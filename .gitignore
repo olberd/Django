@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+<<<<<<< Updated upstream
 *.py[cod]
 *$py.class
 
@@ -104,3 +105,6 @@ venv.bak/
 .mypy_cache/
 
 
+=======
+*.py[cod]
+>>>>>>> Stashed changes
