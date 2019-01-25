@@ -2,9 +2,20 @@
 	<a href="{% url 'home' %}" class="logo"></a>
 
 				<ul class="menu">
-					<li><a href="{% url 'home' %}" class="active">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="{% url 'contact' %}">контакты</a></li>
+
+                {% for item in data.1.main_menu %}
+					<li>
+                        <a href="{% url item.href %}"
+                           class="{% if request.resolver_match.url_name == item.href %}"
+                                    active
+                                    {% endif %}">
+                           {{ item.name }}
+                        </a>
+                    </li>
+
+                {% endfor %}
+{#					<li><a href="{% url 'products' %}">продукты</a></li>#}
+{#					<li><a href="{% url 'contact' %}">контакты</a></li>#}
 				</ul>
 
     <a href="#" class="search"></a>

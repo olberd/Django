@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>
     {% block title %}
-       {{ title|upper }}
+       {{ data.0.title|upper }}
     {% endblock %}
     </title>
 
@@ -17,6 +17,7 @@
     {% block content %}
 		<div class="slider">
             {% include 'mainapp/includes/inc_menu.html' %}
+
 
 			<div class="text-slider">
 				<h3 class="green">тенденции</h3>
