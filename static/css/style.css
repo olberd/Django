@@ -266,6 +266,11 @@ html, body {
 	width: 270px;
 	position: relative;
 }
+.tab-content .block:hover{
+	    transition: all 3s;
+    opacity: 0;
+
+}
 .tab-content a .text {
 	display: none;
 	height: 268px;
