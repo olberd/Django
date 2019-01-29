@@ -6,18 +6,19 @@
 	<meta charset="utf-8">
 	<title>
         {% block title %}
-            Продукты
+            {{ data.0.title }}
         {% endblock %}
     </title>
 </head>
+
 <body>
 
 	<div class="container">
+
      {% block content %}
 		<div class="hero-white">
 			 {% include 'mainapp/includes/inc_menu.html' %}
 		</div>
-
 		<div class="details">
 			<div class="links clearfix">
 				<ul class="links-menu">

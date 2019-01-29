@@ -261,21 +261,40 @@ html, body {
 	justify-content: space-between;
 	margin-bottom: 120px;
 }
+.tab-content img{
+    transition: all 2s;
+    opacity: 1;
+    backface-visibility: hidden;
+
+}
 .tab-content .block {
 	height: 270px;
 	width: 270px;
 	position: relative;
+	transition: all 1s;
 }
-.tab-content a .text {
+.tab-content .block:hover{
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.block:hover .prod-image{
+	opacity: 0.3;
+}
+.block:hover .text{
+	opacity: 1;
+}
+.tab-content  .text {
+	transition: all 1s;
 	display: none;
 	height: 268px;
 	width: 268px;
 	background-color: #ffffff;
-    opacity: 0.9;
     position: absolute;
     top: 0;
     text-align: center;
     border: 1px solid #9c9c9c;
+    opacity: 0;
+
 }
 .tab-content a .text h4 {
 	color:  #212121;
@@ -294,7 +313,7 @@ html, body {
 .tab-content a .text img {
 	margin: 70px auto 0;
 }
-.tab-content a:hover .text {
+.tab-content a .text {
 	display: block;
 }
 
