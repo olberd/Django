@@ -8,10 +8,10 @@ from .models import ProductCategory, Product
 def main(request):
     # content = {'products': prod}
     main_menu = [
-            {'href': 'home', 'name': 'домой'},
-            {'href': 'products:index', 'name': 'продукты'},
-            {'href': 'contact', 'name': 'контакты'}
-               ]
+        {'href': 'home', 'name': 'домой'},
+        {'href': 'products:index', 'name': 'продукты'},
+        {'href': 'contact', 'name': 'контакты'}
+    ]
 
     data = [
         {'title': 'Магазин'},
@@ -29,18 +29,20 @@ def main(request):
 def products(request, pk=None):
     print(pk)
     main_menu = [
-            {'href': 'home', 'name': 'домой'},
-            {'href': 'products:index', 'name': 'продукты'},
-            {'href': 'contact', 'name': 'контакты'}
-               ]
+        {'href': 'home', 'name': 'домой'},
+        {'href': 'products:index', 'name': 'продукты'},
+        {'href': 'contact', 'name': 'контакты'}
+    ]
 
     data = [
         {'title': 'Продукты'},
         {'main_menu': main_menu},
     ]
+    category = ProductCategory.objects.all()
     return render(request, 'mainapp/products.html', {
-                      'data': data,
-                  })
+        'data': data,
+        'category': category,
+    })
 
 
 def contact(request):
