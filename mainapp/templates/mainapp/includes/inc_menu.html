@@ -1,11 +1,31 @@
 <div class="header clearfix">
-	<a href="{% url 'home' %}" class="logo"></a>
+    <a href="{% url 'home' %}" class="logo"></a>
 
-				<ul class="menu">
-					<li><a href="{% url 'home' %}" class="active">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="{% url 'contact' %}">контакты</a></li>
-				</ul>
+    <ul class="menu">
+
+        {% for item in data.1.main_menu %}
+            <li>
+                <a href="{% url item.href %}" {% if request.resolver_match.url_name == item.href %}
+                   class="active" {% endif %} >{{ item.name }}</a>
+            </li>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'auth:edit' %}">
+                {{ user.first_name|default:'Пользователь' }}
+            </a>
+        </li>
+        {% endif %}
+        <li>
+            {% if user.is_authenticated %}
+              <a href="{% url 'auth:logout' %}">выйти</a>
+            {% else %}
+              <a href="{% url 'auth:login' %}">войти</a>
+            {% endif %}
+        </li>
+
+    </ul>
 
     <a href="#" class="search"></a>
 </div>

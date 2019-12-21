@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>
         {% block title %}
-            Контакты
+            {{ data.0.title }}
         {% endblock %}
     </title>
 </head>
@@ -14,16 +14,7 @@
 	<div class="container">
      {% block content %}
 		<div class="hero">
-			<div class="header clearfix">
-				<a href="{% url 'home' %}" class="logo"></a>
-				<ul class="menu">
-					<li><a href="{% url 'home' %}">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
-					<li><a href="{% url 'contact' %}" class="active">контакты</a></li>
-				</ul>
-				<a href="#" class="search"></a>
-                <a href="#" class="basket"></a>
-			</div>
+			{% include 'mainapp/includes/inc_menu.html' %}
 			<h1>наши контакты</h1>
 		</div>
 
